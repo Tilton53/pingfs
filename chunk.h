@@ -31,9 +31,9 @@ struct chunk {
 	/* Link for list of chunks in this same file */
 	struct chunk *next_file;
 	struct host *host;
+	struct host2 *host2;
 	struct io *io;
 	uint16_t id;
-	uint64_t version;   // Version or timestamp for updates
 	uint16_t seqno;
 	uint16_t len;
 };
