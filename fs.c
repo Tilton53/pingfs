@@ -258,8 +258,10 @@ static int fs_inner_write(struct file *f, const char *buf, size_t size,
 		else
 			f->chunks = c;
 		c->host = host_get_next();
+		c->host2 = host_get_next();
 		net_send(c->host, c->id, c->seqno, (const uint8_t *) buf, c->len);
-
+                net_send(c->host2, c->id, c->seqno, (const uint8_t *) buf, c->len);
+		
 		return c->len;
 	}
 	/* Modify/extend existing chunk */
