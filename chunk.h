@@ -33,6 +33,7 @@ struct chunk {
 	struct host *host;
 	struct io *io;
 	uint16_t id;
+	uint64_t version;   // Version or timestamp for updates
 	uint16_t seqno;
 	uint16_t len;
 };
